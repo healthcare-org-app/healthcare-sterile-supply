@@ -1,0 +1,10 @@
+name: sterile-supply-service
+port: 9203
+lang: python
+description: "sterile-supply-service \u2014 domain: identity"
+http_deps:
+- equipment-service
+- audit-log-service
+publishes:
+- audit.event
+subscribes: []
