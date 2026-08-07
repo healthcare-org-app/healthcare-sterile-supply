@@ -5,6 +5,7 @@ description: "sterile-supply-service \u2014 domain: identity"
 http_deps:
 - equipment-service
 - audit-log-service
+- erp-procurement
 publishes:
 - audit.event
 subscribes: []

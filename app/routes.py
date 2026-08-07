@@ -70,7 +70,15 @@ def build_blueprint(svc) -> Blueprint:
     def create_record():
         payload = request.get_json(silent=True) or {}
         payload.pop("id", None)
-
+        if payload.get('vendor_id'):
+            _peer = clients.get('erp-procurement')
+            if _peer:
+                try:
+                    payload['vendor_snapshot'] = json_or_raise(
+                        _peer.get(f"/api/erp_procurement/" + str(payload['vendor_id']))
+                    )
+                except ServiceUnavailable as _e:
+                    payload['vendor_warn'] = str(_e)
         row = db.query_one(
             f"INSERT INTO {TABLE} (data) VALUES (%s) RETURNING *",
             (Json(payload),),

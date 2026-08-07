@@ -13,6 +13,7 @@ services:
       SERVICE_HOST_MODE: docker
       PORT_EQUIPMENT_SERVICE: "9202"
       PORT_AUDIT_LOG_SERVICE: "8007"
+      PORT_ERP_PROCUREMENT: "3016"
       LOG_LEVEL: INFO
     ports:
       - "9203:9203"

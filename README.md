@@ -28,6 +28,7 @@ sterile-supply-service — domain: identity
 
 - `equipment-service`
 - `audit-log-service`
+- `erp-procurement`
 
 ## Local dev
 
