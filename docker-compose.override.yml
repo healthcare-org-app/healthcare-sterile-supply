@@ -1,7 +1,7 @@
 services:
   sterile-supply-service:
     build: .
-    container_name: ${NAME_UNDERSCORE}
+    container_name: sterile_supply_service
     depends_on:
       postgres:
         condition: service_healthy
